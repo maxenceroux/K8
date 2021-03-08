@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
         sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
         service ssh restart
         SHELL
+        config.vm.provision "shell", path: "install_common.sh"
     end
     numberSrv=2
     (1..numberSrv).each do |i|
@@ -32,7 +33,8 @@ Vagrant.configure("2") do |config|
         sed -i 's/ChallengeResponseAuthentication no/ChallengeResponseAuthentication yes/g' /etc/ssh/sshd_config
         service ssh restart
         SHELL
-    
+        config.vm.provision "shell", path: "install_common.sh"
+
 
         end
     end
