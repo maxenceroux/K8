@@ -36,6 +36,7 @@ Vagrant.configure("2") do |config|
         service ssh restart
         SHELL
         config.vm.provision "shell", path: "install_common.sh"
+        config.vm.provision "shell", path: "install_nodes.sh"
 
 
         end
